@@ -2,6 +2,8 @@
 
 A personal AI concierge agent that helps students track hackathon, assignment, and exam deadlines through natural conversation — built for the **AI Agents: Intensive Vibe Coding Capstone Project** (Concierge Agents track).
 
+🔗 **Repo:** https://github.com/shaurya-s-dev/deadline-concierge
+
 ## Problem
 
 Students juggling multiple hackathons, coursework, and exams end up tracking deadlines across scattered notes, chat threads, and memory. Missed or forgotten deadlines are a real, everyday cost — and most task-tracking apps require manual data entry through forms rather than just *telling* something what's due.
@@ -16,6 +18,21 @@ Deadline Concierge is a conversational agent you talk to naturally:
 
 The agent interprets these requests, calls the right tool, and keeps all data **stored locally** — nothing leaves the user's machine, which matters for a Concierge agent handling personal schedule information.
 
+### Example conversation
+
+```
+You: Add my Alphaline hackathon deadline for June 30 2026
+Agent: OK. Alphaline hackathon is added for June 30, 2026.
+
+You: What's due in the next 7 days?
+Agent: Here are the upcoming deadlines:
+       *   Alphaline hackathon (hackathon) - Due 2026-06-30 (4 days ago)
+       *   OODP assignment (assignment) - Due 2026-07-10 (in 6 days)
+
+You: Mark the Alphaline hackathon as done
+Agent: OK. I've marked Alphaline hackathon as done.
+```
+
 ## Architecture
 
 ```
@@ -25,7 +42,7 @@ The agent interprets these requests, calls the right tool, and keeps all data **
            │ natural language
            ▼
 ┌─────────────────────┐
-│  ADK Agent           │  (Gemini 2.0 Flash)
+│  ADK Agent           │  (Gemini 2.5 Flash-Lite)
 │  agent/agent.py       │  - interprets intent
 │                       │  - normalizes dates
 └──────────┬───────────┘
